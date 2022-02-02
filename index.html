@@ -11,28 +11,51 @@
 </head>
 <body>
 
-	<section class="principal">
+	<main class="principal">
+
 		<div class="container">
-			<div class="titulo">
-				<h1>Calculadora de Taxa Real de Juros</h1>
-			</div><!--titulo-->
 
-			<form>
-				<label for="taxa-nominal-anual">Taxa de rendimento anual</label>
-				<input type="text" id="taxa-nominal-anual" name="taxa-nominal-anual" placeholder="% a.a" required>
+			<div class="abas">
+				<button class="ativa" data-aba="calculadora">CALCULADORA</button>
+				<button data-aba="conversor">CONVERSOR</button>
+			</div><!--abas-->
 
-				<label for="taxa-inflacao">Taxa de inflação (IPCA)</label>
-				<input type="text" id="taxa-inflacao" name="taxa-inflacao" placeholder="% a.a" required>
+			<section class="calculadora" data-conteudo="calculadora">
 
-				<input type="submit" value="Gerar" class="enviar" id="botao">
-			</form>
+				<div class="titulo">
+					<h1>Calculadora de Taxa Real de Juros</h1>
+				</div><!--titulo-->
 
-			<div class="resultado" id="resultado-calculo">
-				<h2 class="saida"></h2>
-			</div>
+				<form>
+					<label for="taxa-nominal-anual">Taxa de rendimento anual</label>
+					<input type="text" id="taxa-nominal-anual" name="taxa-nominal-anual" placeholder="% a.a" required>
+
+					<label for="taxa-inflacao">Taxa de inflação (IPCA)</label>
+					<input type="text" id="taxa-inflacao" name="taxa-inflacao" placeholder="% a.a" required>
+
+					<input type="submit" value="Gerar" class="enviar" id="botao">
+				</form>
+
+				<div class="resultado hide" id="resultado-calculo">
+					<h2 class="saida"></h2>
+				</div><!--resultado-->
+
+			</section><!--calculadora-->
+			
+
+			<section class="conversor hide" data-conteudo="conversor">
+				<div>
+					<p>Cotação Dólar hoje: <span id="dolar-hoje"></span></p>
+
+					<label for="valor-real">Valor a ser convertido:</label>
+					<input type="text" id="valor-real" name="valor-real" placeholder="R$...">
+
+					<button id="converter">Converter</button>
+				</div>
+			</section><!--conversor-->
 
 		</div><!--container-->
-	</section><!--principal-->
+	</main><!--principal-->
 	
 	<script>
 
@@ -57,9 +80,15 @@
 
 			document.querySelector(".saida").textContent = "Sua Taxa Real de Juros será de "+resultado.toFixed(2)+"%";
 
+			saida.classList.remove("hide");
+
 			//document.querySelector("form").reset();
 		})
+
 	</script>
+	<script src="js/seletor.js"></script>
+	<script src="js/cotacao-dolar.js"></script>
+	<script src="js/conversor.js"></script>
 
 </body>
 </html>

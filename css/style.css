@@ -14,15 +14,27 @@ body{
 
 /* SECTION PRINCIPAL */
 
-section.principal{
+main.principal{
 	width: 100vw;
 	height: 100vh;
 	background-color: darkorange;
 }
 
+.abas button{
+	font-size: 16px;
+	font-weight: normal;
+	cursor: pointer;
+	margin-bottom: 10px;
+	padding: 3px 5px;
+	color: black;
+	float: left;
+	width: 50%;
+}
+
 .principal > .container{
 	background-color: #F0F0F0;
-	height: 200px;
+	height: 230px;
+	width: 350px;
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -33,7 +45,7 @@ section.principal{
 }
 
 .titulo h1{
-	font-size: 24px;
+	font-size: 20px;
 	font-weight: bold;
 	color: black;
 	margin-bottom: 15px;
@@ -52,6 +64,7 @@ label{
 input{
 	width: 100%;
 	box-sizing: border-box;
+	padding: 3px;
 }
 
 input.enviar{
@@ -69,4 +82,31 @@ input.enviar{
 	font-weight: bold;
 	font-style: italic;
 	padding: 10px;
+}
+
+.hide{
+	display: none;
+}
+
+.abas .ativa{
+	background-color: darkorange;
+	color: white;
+	font-weight: bold;
+}
+
+#dolar-hoje{
+	font-weight: bold;
+	color: darkorange;
+}
+
+#converter{
+	margin-top: 10px;
+}
+
+.conversao{
+	font-size: 24px;
+	font-weight: bold;
+	margin-top: 15px;
+	text-align: center;
+	color: green;
 }
